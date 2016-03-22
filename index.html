@@ -1,1 +1,53 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>TIME-AWARE RECOMMENDER SYSTEMS USING DEEP NEURAL NETWORKS</title>
+	<meta name="keywords" content="html5,bibliography,markup" />
+	<meta name="description" content="Sample HTML5 code to markup a bibliography" />
+	<link href='bibliography.css' rel='stylesheet'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet'>
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,900' rel='stylesheet' type='text/css'>
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script>
+		/*
+		$(function() {
+			$('q').click(function() {
+				window.location = $(this).attr('cite');
+			});
+		});
+		*/
+	</script>
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+
+
+<body>
+<h1>TIME-AWARE RECOMMENDER SYSTEMS USING DEEP NEURAL NETWORKS</h1>
+<p>Deep neural networks have achieved state-of-the-art performance for tasks like multi class image classification, speech recognition, and various NLP tasks like part-of-speech (POS) tagging.  At the same time, less attention has been paid to applying deep learning to learn recommender systems. One possible reason could be the sparsity of training data. 
+
+In recent years, a few attempts have been made to apply neural networks to learn recommender systems. Salakhutdinov et al 2007 used Restricted Boltzmann Machines (RBMs). More recently, 
+<q cite='#bib01'>Salakhutdinov et.. al. 2007	</q>
+</p>
+
+
+
+
+		<section>
+			<h2>Bibliography</h2>
+			<ol>
+				<li id='bib01'>Salakhutdinov, Ruslan and Mnih, Andriy and Hinton, Geoffrey. <cite> <i>Restricted Boltzmann Machines for Collaborative Filtering </i></cite>,
+ Proceedings of the 24th International Conference on Machine Learning <time>2007</time> </li>
+			</ol>
+		</section>
+		<script>
+		// Non jQuery handler
+			var quotes = document.getElementsByTagName('q');
+			for (var i in quotes) {
+				quotes[i].addEventListener('click', function() { window.location = this.getAttribute('cite'); }, false);
+			}
+		</script>
+
+</body>
+</html>

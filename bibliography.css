@@ -1,0 +1,47 @@
+
+
+body {
+	color:#222;
+	font-size:67.5%;
+	background-color:#caccc9;
+}
+h1 {
+	font:600 5.4em "open sans";
+	margin:0 0 .2em;
+}
+h2 {
+	font:800 3.4em "open sans";
+	margin:.1em 0;
+}
+article {
+	width:75%;
+	padding:2em 5em;
+}
+p, ol {
+	font:400 1.3em/2em "merriweather";
+}
+p {
+	text-indent:3em;
+}
+ol {
+	padding-left:1.5em;
+}
+q {
+	cursor:pointer;
+}
+q:hover {
+	color:#caccc9;
+	background-color:#222;
+}
+cite {
+	font-style:normal;
+}
+small {
+	font:100 1em/1em "merriweather";
+}
+footer {
+	border-top:1px solid #aaa;
+}
+footer p {
+	text-indent:0;
+}
