@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>TIME-AWARE RECOMMENDER SYSTEMS USING DEEP NEURAL NETWORKS</title>
+	<title>COLLABORATIVE FILTERING USING STACKED DENOISING AUTOENCODERS AND RECURRENT NEURAL NETWORKS</title>
 	<meta name="keywords" content="html5,bibliography,markup" />
 	<meta name="description" content="Sample HTML5 code to markup a bibliography" />
 	<link href='bibliography.css' rel='stylesheet'>
@@ -24,20 +24,62 @@
 
 
 <body>
-<h1>TIME-AWARE RECOMMENDER SYSTEMS USING DEEP NEURAL NETWORKS</h1>
-<p>Deep neural networks have achieved state-of-the-art performance for tasks like multi class image classification, speech recognition, and various NLP tasks like part-of-speech (POS) tagging.  At the same time, less attention has been paid to applying deep learning to learn recommender systems. One possible reason could be the sparsity of training data. 
+<h1> COLLABORATIVE FILTERING USING STACKED DENOISING AUTOENCODERS AND RECURRENT NEURAL NETWORKS </h1>
 
-In recent years, a few attempts have been made to apply neural networks to learn recommender systems. Salakhutdinov et al 2007 used Restricted Boltzmann Machines (RBMs). More recently, <q cite='#bib01'>Salakhutdinov et. al. 2007	</q>
+<h2> Introduction </h2>
+<p>Deep neural networks have achieved state-of-the-art performance for tasks like multi-class image classification, speech recognition, and various NLP tasks like part-of-speech (POS) tagging.  At the same time, less attention has been paid to applying deep learning to learn recommender systems. One possible reason could be the sparsity of training data. The most promising approach to learn recommender systems via collaborative filtering has been model based matrix factorisation approaches. However, these methods are linear and their power can be subsumed by even very simple neural networks. </p>
+
+
+<p> In recent years, a few attempts have been made to apply neural networks to learn recommender systems. <b><q cite='#bib01'>Salakhutdinov et. al. 2007</q></b> used Restricted Boltzmann Machines (RBMs) successfully to learn recommender systems, demonstrating one of the first uses of neural networks in this task. However, their network was not deep, requires a huge number of parameters to be learned and is difficult to train. Very recently, <b><q cite='#bib02'>Wang et. al. 2015 </q></b> have introduced an approach to use deep networks to extract features for items and users that can be incorporated into standard model-based methods. </p>
+
+<p> We aim at tackling two specific kinds of problems in this project, specifically user-profile based recommendations and session-based recommendations. While the first problem is widely studied, the second problem has not been given much importance and is mostly related to small and medium e-commerce retailers who do not typically track users across sessions. For the first problem, we aim at using <b><q cite='#bib04'> Stacked Denoising Autoencoders </q></b> to learn user and item profiles, and will incorporate this information into standard collaborative filtering model-based approachs. Since our data contains social network information, we also aim at incorporating this information as “social regularisation” to help our models perform better. For the second problem, we turn to clickstream data based on sessions. We aim at using recurrent neural networks (RNNs) and their variants to convert this into a sequence prediction problem. For example, what would the user click next given that he has already clicked a few items in a session? We then assess the performance of both models on their respective tasks.
 </p>
 
+<section>
+<h2> Datasets </h2>
+	<p> We will use the following publicly-available datasets: </p>
+	<ul>
+		<li> <p> The MovieLens datasets consist of the following:
+			<ol>
+				<li> 1 million discrete rating for 6000 users on 4000 movies.</li>
+				<li> 10 million discrete rating for 72000 users on 10000 movies.</li>
+				<li> 20 million discrete rating for 138000 users on 27000 movies.</li>
+			</ol>
 
+			<p> Side information for MovieLens-1M is the age, sex and gender of the user and the movie category (action, thriller etc.). Side information for MovieLens-10/20M is a matrix of tags T where Tij is the occurrence of the j th tag for the i th movie and the movie category. No side information is provided for users. </p></li>
 
+		<li> <p> The Douban dataset (<b><q cite='#bib02'> Ma et al., 2011 </q></b>) contains 17 million discrete ratings from 129 thousands users on 58 thousands movies. Side-information is provided for users, and is the bi-directional user/friend relations for the user. No side information is provided for items.</p> </li>
+		<li> <p> <a href="http://2015.recsyschallenge.com"> The RecSys Challenge 2015 dataset </a> contains clickstream data for an e-commerce website. The data contains about 8 million sesstions with about 35 million clicks on 38000 items. Some of the clicks end up in purchases. </p> </li>
+	</ul>
+</section>
+
+<section>
+<h2> Project Milestones </h2>
+<p>
+The following milestones have been decided for the project:
+
+<ul> 
+	<li> <p> Procure datasets, and explore them  - COMPLETED.</p></li> 
+	<li> <p> Implement Stacked Denoising Autoencoders for learning deep encoded representations of users and items - COMPLETED.</p></li>
+	<li> <p> Implement RNNs and variants to avoid the vanishing gradient problems -  ONGOING.</p></li>
+	<li> <p> Explore regularization schemes like Dropout to further improve RNN performance.</p></li>
+</p>
+</ul>	
+</p>
+
+</section>
 
 		<section>
 			<h2>Bibliography</h2>
 			<ol>
-				<li id='bib0'>Salakhutdinov, Ruslan and Mnih, Andriy and Hinton, Geoffrey. <cite> <i>Restricted Boltzmann Machines for Collaborative Filtering </i></cite>,
+				<li id='bib01'>Salakhutdinov, Ruslan and Mnih, Andriy and Hinton, Geoffrey. <cite> <i>Restricted Boltzmann Machines for Collaborative Filtering </i></cite>,
  Proceedings of the 24th International Conference on Machine Learning <time>2007</time> </li>
+ 				<li id='bib02'>Wang, Hao and Wang, Naiyan and Yeung, Dit-Yan. <cite> <i>Collaborative Deep Learning for Recommender Systems</i></cite>,
+ arXiv <time>2015</time> </li>
+  				<li id='bib03'>Ma, Hao and Zhou, Dengyong and Liu, Chao and Lyu, Michael R. and King, Irwin. <cite> <i>Recommender systems with social regularization</i></cite>,
+ WSDM <time>2011</time> </li>
+   				<li id='bib04'>Vincent, Pascal and Larochelle, Hugo and Lajoie, Isabelle and Bengio, Yoshua and Manzagol, Pierre-Antoine. <cite> <i>Stacked Denoising Autoencoders: Learning Useful Representations in a Deep Network with a Local Denoising Criterion</i></cite>,
+ J. Mach. Learn. Res. <time>2010</time> </li>
 			</ol>
 		</section>
 		<script>

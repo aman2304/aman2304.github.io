@@ -6,7 +6,7 @@ body {
 	background-color:#caccc9;
 }
 h1 {
-	font:600 5.4em "open sans";
+	font:600 4.4em "open sans";
 	margin:0 0 .2em;
 }
 h2 {
@@ -21,7 +21,7 @@ p, ol {
 	font:400 1.3em/2em "merriweather";
 }
 p {
-	text-indent:3em;
+	text-indent:0em;
 }
 ol {
 	padding-left:1.5em;
